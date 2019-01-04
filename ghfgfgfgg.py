@@ -24,6 +24,6 @@ def areAnagram(str1, str2):
 str1 = "test"
 str2 = "ttew"
 if areAnagram(str1, str2):  
-    print ("The two strings are anagram of each other") 
+    print ("dhoni") 
 else:  
-    print ("The two strings are not anagram of each other") 
+    print ("baba") 
