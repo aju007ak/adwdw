@@ -1,30 +1,31 @@
-def lenOfLongIncSubArr(arr, n) : 
-  
-  
-    m = 1 
-    l = 1 
-       
-    # traverse the array from the 2nd element 
-    for i in range(1, n) : 
-  
-       
-        if (arr[i] > arr[i-1]) : 
-            l =l + 1 
-        else : 
-  
-            if (m < l)  : 
-                m = l  
-    
-            l = 1 
-          
- 
-    if (m < l) : 
-        m = l 
+import sys, string, math
 
-    return m 
-  
+# to find the length of longest increasing  subarray
 
-  
-arr = [5, 6, 3, 5, 7, 8, 9, 1, 2] 
-n = len(arr) 
-print("Length = ", lenOfLongIncSubArr(arr, n)) 
+def lenOfLongIncSubArr(arr, n):
+    # 'max' to store the length of longest increasing subarray
+    # 'len' to store the lengths of longest increasing subarray
+    max1 = 1
+    len1 = 1
+
+    # traverse the array from the 2nd element
+    for i in range(1, n):
+
+        if (arr[i] > arr[i - 1]):
+            len1 = len1 + 1
+        else:
+            if (max1 < len1):
+                max1 = len1
+            len1 = 1
+    # comparing the length of the last
+    # increasing subarray with 'max'
+    if (max1 < len1):
+        max1 = len1
+    return max1
+
+
+# Driver program to test above
+
+n = int(input())
+L = [ int(x) for x in input().split()]
+print(lenOfLongIncSubArr(L, n))
