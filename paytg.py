@@ -1,17 +1,11 @@
-def getPairsCount(arr, n, sum): 
-      
-    count = 0 # Initialize result 
+import sys, string, math
+n,k = input().split()
+n,k = int(n), int(k)
+L = [ int(x) for x in input().split()]
+for i in range(0,n-1) :
+    for j in range(i+1,n) :
+        if L[i] + L[j] == k :
+            print('yes')
+            sys.exit()
+print('no')
 
-    for i in range(0, n): 
-        for j in range(i + 1, n): 
-            if arr[i] + arr[j] == sum: 
-                count += 1
-      
-    return count 
-  
-
-arr = [1, 5, 7, -1, 5] 
-n = len(arr) 
-sum = 6
-print("Count of pairs is", 
-      getPairsCount(arr, n, sum)) 
