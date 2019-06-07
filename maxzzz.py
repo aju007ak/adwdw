@@ -1,16 +1,18 @@
-def maxIndexDiff(arr, n): 
-    maxDiff = -1
-    for i in range(0, n): 
-        j = n - 1
-        while(j > i): 
-            if arr[j] > arr[i] and maxDiff < (j - i): 
-                maxDiff = j - i; 
-            j -= 1
-      
-    return maxDiff 
-  
+import sys, string, math
 
-arr = [9, 2, 3, 4, 5, 6, 7, 8, 18, 0] 
-n = len(arr) 
-maxDiff = maxIndexDiff(arr, n) 
-print(maxDiff) 
+s = input()
+if s == s[::-1] :
+    print('yes')
+    sys.exit()
+k = 0
+for c in s[::-1] :
+    if c == '0' :
+        k += 1
+    else :
+        break
+s2 = '0'*k + s
+#print(s2)
+if s2 == s2[::-1] :
+    print('yes')
+else :
+    print('no')
