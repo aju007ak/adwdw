@@ -1,29 +1,18 @@
+import sys, string, math
+from itertools import permutations, combinations
+s = input()
+dic1 = {}
+for c in 'dhoni' :
+    dic1[c] = 1
+#print(dic1)
+dic2 = {}
+for c in s :
+    if c in dic2 :
+        dic2[c] += 1
+    else :
+        dic2[c] = 1
+#print(dic2)
+if dic1 == dic2 : print('yes')
+else :            print('no')
 
-def areAnagram(str1, str2):  
-     
-    n1 = len(str1)  
-    n2 = len(str2)  
-  
-     
-    if n1 != n2:  
-        return 0
-  
-  
-    str1 = sorted(str1) 
-    str2 = sorted(str2) 
-  
-     
-    for i in range(0, n1):  
-        if str1[i] != str2[i]:  
-            return 0
-  
-    return 1
-  
-  
 
-str1 = "test"
-str2 = "ttew"
-if areAnagram(str1, str2):  
-    print ("dhoni") 
-else:  
-    print ("baba") 
